@@ -1,0 +1,9 @@
+login:
+  with-squid:
+    messages:
+     - '&aYou are using SquidHQ!'
+    commands:
+    - 'examplecommand {player} hello'
+  without-squid:
+    messages: []
+    commands: []

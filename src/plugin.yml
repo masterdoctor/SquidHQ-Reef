@@ -1,0 +1,10 @@
+name: SquidHQ
+main: com.squidhq.plugin.Plugin
+version: 1
+commands:
+  sqcheck:
+    description:
+    usage:
+  sqstats:
+    description:
+    usage:
