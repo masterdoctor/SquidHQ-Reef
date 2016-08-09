@@ -3,8 +3,18 @@ main: com.squidhq.plugin.Plugin
 version: 1
 commands:
   sqcheck:
-    description:
-    usage:
+    description: Check whether a given player is running SquidHQ
+    usage: /sqcheck <player>
+    permission: squidhq.check
   sqstats:
-    description:
-    usage:
+    description: Check the current online player stats
+    usage: /sqstats
+    permission: squidhq.stats
+
+permissions:
+  squidhq.stats:
+    default: op
+    description: Allows use of /sqstats
+  squidhq.check:
+    default: op
+    description: Allows use of /sqcheck

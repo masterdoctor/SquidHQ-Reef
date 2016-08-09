@@ -19,10 +19,6 @@ public class CommandStats implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("squidhq.stats")) {
-            sender.sendMessage(ChatColor.RED + "No permission");
-            return true;
-        }
         Set<UUID> players = new HashSet<UUID>();
         players.addAll(this.plugin.getPlayers());
         Iterator<UUID> playersIt = players.iterator();
