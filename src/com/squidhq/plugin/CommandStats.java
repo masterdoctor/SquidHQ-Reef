@@ -32,7 +32,7 @@ public class CommandStats implements CommandExecutor {
             }
             playersIt.remove();
         }
-        System.out.println(ChatColor.YELLOW + "Running SquidHQ: " + ChatColor.WHITE + players.size() + "/" + this.plugin.getServer().getOnlinePlayers().size());
+        sender.sendMessage(ChatColor.YELLOW + "Running SquidHQ: " + ChatColor.WHITE + players.size() + "/" + this.plugin.getServer().getOnlinePlayers().size());
         return true;
     }
 
