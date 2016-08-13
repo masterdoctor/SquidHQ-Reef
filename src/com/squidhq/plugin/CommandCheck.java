@@ -17,10 +17,7 @@ public class CommandCheck implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!sender.hasPermission("squidhq.check")) {
-            sender.sendMessage(ChatColor.RED + "No permission");
-            return true;
-        }
+
         if (args.length == 0) {
             sender.sendMessage(ChatColor.RED + "/sqcheck <player/uuid>");
             return true;
@@ -35,11 +32,8 @@ public class CommandCheck implements CommandExecutor {
                 return true;
             }
         }
-        if (this.plugin.isRunning(player)) {
-            sender.sendMessage(ChatColor.YELLOW + "Player " + player.getName() + " is " + ChatColor.GREEN + "now" + ChatColor.YELLOW + " running SquidHQ");
-        } else {
-            sender.sendMessage(ChatColor.YELLOW + "Player " + player.getName() + " is " + ChatColor.RED + "not" + ChatColor.YELLOW + " running SquidHQ");
-        }
+        sender.sendMessage(ChatColor.YELLOW + "Player " + player.getName() + " is " + ChatColor.GREEN +
+                (this.plugin.isRunning(player) ? "now" : "not") + ChatColor.YELLOW + " running SquidHQ");
         return true;
     }
 
