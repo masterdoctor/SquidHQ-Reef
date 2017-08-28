@@ -1,4 +1,9 @@
-build
-.gradle
+### Java
+# Compiled class file
+*.class
+
+### Compiled Files
+dist
+
+### IntelliJ
 .idea
-*.iml
