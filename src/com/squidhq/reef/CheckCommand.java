@@ -1,6 +1,5 @@
 package com.squidhq.reef;
 
-import com.squidhq.plugin.APISingleton;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
