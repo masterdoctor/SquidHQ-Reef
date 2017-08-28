@@ -4,6 +4,10 @@
 
 ### Compiled Files
 dist
+out
 
 ### IntelliJ
 .idea
+
+### Gradle
+.gradle
