@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="SquidHQ Plugin:jar">
-    <output-path>$PROJECT_DIR$/dist/</output-path>
-    <root id="archive" name="SquidHQ Plugin.jar">
-      <element id="module-output" name="SquidHQ Plugin" />
-      <element id="extracted-dir" path="C:/Program Files/Eclipse Foundation/eclipse/bukkit/spigot-api-1.8.8-R0.1-SNAPSHOT-latest-shaded.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>

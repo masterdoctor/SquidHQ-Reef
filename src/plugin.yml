@@ -4,7 +4,7 @@ version: 1.0.0-Reef
 commands:
   sqcheck:
     description: Check whether a given player is running the SquidHQ client
-    usage: /sqcheck <Player/UUID>
+    usage: /sqcheck <name/uuid>
     permission: squidhq.check
   sqstats:
     description: Check the current online player stats
