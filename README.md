@@ -13,6 +13,7 @@ https://github.com/masterdoctor/SquidHQ-Reef/releases
 Just click `SquidHQ.jar` under the latest release!
 
 ## Are there screenshots?
+**Note:** The last two messages are the result of running `/sqcheck SamJakob`.
 ![Login with SquidHQ detected](https://raw.githubusercontent.com/masterdoctor/SquidHQ-Reef/master/screenshots/squidhq-detected.png)
 ![Login with SquidHQ not detected](https://raw.githubusercontent.com/masterdoctor/SquidHQ-Reef/master/screenshots/squidhq-notdetected.png)
 
