@@ -12,6 +12,10 @@ Another of my goals was to explain how the plugin works for those who would like
 https://github.com/masterdoctor/SquidHQ-Reef/releases  
 Just click `SquidHQ.jar` under the latest release!
 
+## Are there screenshots?
+![Login with SquidHQ detected](https://raw.githubusercontent.com/masterdoctor/SquidHQ-Reef/master/screenshots/squidhq-detected.png)
+![Login with SquidHQ not detected](https://raw.githubusercontent.com/masterdoctor/SquidHQ-Reef/master/screenshots/squidhq-notdetected.png)
+
 ## I have a problem/I would like to request a feature
 You can message me (SamJakob#1079) in the Clout Team discord server: https://discord.gg/mUxrE7y. (I am also in the SquidHQ discord server)
 
