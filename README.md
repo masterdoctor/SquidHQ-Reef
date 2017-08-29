@@ -5,7 +5,7 @@
 
 ## What is SquidHQ Reef?
 
-SquidHQ Reef is a refined fork of SquidHQ with a new API (the old one is still compatable but is deprecated), extra features and higher efficiency.
+SquidHQ Reef is a refined fork of the official SquidHQ plugin with a new API (the old one is still compatable but is deprecated), extra features and higher efficiency.
 Another of my goals was to explain how the plugin works for those who would like to incorporate this plugin's functionality in their own software.
 
 ## Where can I download it?
