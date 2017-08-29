@@ -9,9 +9,9 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public class CheckCommand implements CommandExecutor {
+class CheckCommand implements CommandExecutor {
 
-    private Reef reefPlugin;
+    private final Reef reefPlugin;
 
     public CheckCommand(Reef reefPlugin){
         this.reefPlugin = reefPlugin;

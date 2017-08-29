@@ -9,9 +9,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.logging.Level;
 
-public class MessagingListener implements PluginMessageListener {
+class MessagingListener implements PluginMessageListener {
 
-    private Reef reefPlugin;
+    private final Reef reefPlugin;
 
     public MessagingListener(Reef reefPlugin){
         this.reefPlugin = reefPlugin;

@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class ReefAPI {
 
-    private Reef reefPlugin;
+    private final Reef reefPlugin;
 
     public ReefAPI(Reef reefPlugin){
         this.reefPlugin = reefPlugin;

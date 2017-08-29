@@ -1,6 +1,6 @@
 name: SquidHQ
 main: com.squidhq.reef.Reef
-version: 1.0.0-Reef
+version: 1.0.1-Reef
 commands:
   sqcheck:
     description: Check whether a given player is running the SquidHQ client

@@ -5,6 +5,7 @@
 ### Compiled Files
 dist
 out
+build
 
 ### IntelliJ
 .idea

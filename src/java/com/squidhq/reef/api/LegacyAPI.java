@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class LegacyAPI implements API {
 
-    private Reef reefPlugin;
+    private final Reef reefPlugin;
 
     public LegacyAPI(Reef reefPlugin){
         this.reefPlugin = reefPlugin;

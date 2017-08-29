@@ -3,6 +3,7 @@ package com.squidhq.reef;
 import com.squidhq.plugin.APISingleton;
 import com.squidhq.reef.api.LegacyAPI;
 import com.squidhq.reef.api.ReefAPI;
+import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.*;
@@ -12,8 +13,6 @@ public class Reef extends JavaPlugin {
 
     private List<String> identifiedPlayers;
     private List<String> squidPlayers;
-
-    private static ReefAPI reefAPI;
 
     @Override
     public void onEnable(){
@@ -37,7 +36,7 @@ public class Reef extends JavaPlugin {
         getServer().getMessenger().registerIncomingPluginChannel(this, "MC|Brand", new MessagingListener(this));
 
         getLogger().log(Level.INFO, "Starting API.");
-        reefAPI = new ReefAPI(this);
+        getServer().getServicesManager().register(ReefAPI.class, new ReefAPI(this), this, ServicePriority.Normal);
         // Start the legacy API
         APISingleton._api = new LegacyAPI(this);
 
@@ -48,12 +47,6 @@ public class Reef extends JavaPlugin {
     public void onDisable(){
         getLogger().log(Level.INFO, "Plugin deactivated.");
         getLogger().log(Level.INFO, "Thanks for supporting SquidHQ!");
-    }
-
-
-    /* API */
-    public static ReefAPI getAPI(){
-        return reefAPI;
     }
 
 

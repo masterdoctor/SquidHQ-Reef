@@ -10,9 +10,9 @@ import org.bukkit.entity.Player;
 import java.util.List;
 import java.util.UUID;
 
-public class StatisticCommand implements CommandExecutor {
+class StatisticCommand implements CommandExecutor {
 
-    private Reef reefPlugin;
+    private final Reef reefPlugin;
 
     public StatisticCommand(Reef reefPlugin){
         this.reefPlugin = reefPlugin;

@@ -5,9 +5,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class ReloadCommand implements CommandExecutor {
+class ReloadCommand implements CommandExecutor {
 
-    private Reef reefPlugin;
+    private final Reef reefPlugin;
 
     public ReloadCommand(Reef reefPlugin){
         this.reefPlugin = reefPlugin;

@@ -1,0 +1,62 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+group = "com.clout-team.sam"
+version = "1.0.1-Reef"
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/repositories/public/"
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
+    compileOnly 'org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT'
+}
+
+/* `gradle build` from the command line */
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/java']
+        }
+
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
+}
+
+
+jar {
+    archiveName "SquidHQ-${version}.jar"
+}
+
+/* `gradle publish` from the command line */
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            version "${version}"
+
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            credentials {
+                username ''
+                password ''
+            }
+            url "http://nexus.clout-team.com/repository/clout-team/"
+        }
+    }
+}
