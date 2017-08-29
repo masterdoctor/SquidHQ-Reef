@@ -7,6 +7,11 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * A public API for SquidHQ-Reef.
+ * @author Sam J.H. Mearns (SamJakob)
+ * @version 1.0.1
+ */
 public class ReefAPI {
 
     private final Reef reefPlugin;

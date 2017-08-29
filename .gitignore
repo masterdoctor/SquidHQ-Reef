@@ -2,10 +2,11 @@
 # Compiled class file
 *.class
 
-### Compiled Files
+### Compiled/Generated Files
 dist
 out
 build
+doc
 
 ### IntelliJ
 .idea
