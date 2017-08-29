@@ -1,5 +1,5 @@
 <p align="center">
-<img src="http://i.imgur.com/P1bFMqt.png">
+  <a href="https://squidhq.com/"><img src="http://i.imgur.com/P1bFMqt.png"></a>
 </p>
 <br>
 
