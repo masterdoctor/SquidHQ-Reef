@@ -12,3 +12,4 @@ build
 
 ### Gradle
 .gradle
+build.gradle
