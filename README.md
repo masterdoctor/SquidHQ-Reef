@@ -9,7 +9,7 @@ SquidHQ Reef is a refined fork of SquidHQ with a new API (the old one is still c
 Another of my goals was to explain how the plugin works for those who would like to incorporate this plugin's functionality in their own software.
 
 ## Where can I download it?
-https://github.com/masterdoctor/SquidHQ-Reef/releases/latest
+https://github.com/masterdoctor/SquidHQ-Reef/releases/latest  
 Just click `SquidHQ.jar` under the latest release!
 
 ## Are there screenshots?
