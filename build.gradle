@@ -1,10 +1,15 @@
+import java.util.regex.Pattern
+
+// Apply required plugins
 apply plugin: 'idea'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
 
+// Group and version information
 group = "com.clout-team.sam"
-version = "1.0.3-Reef"
+version = "1.0.4-Reef"
 
+// Repositories & dependencies
 repositories {
     mavenCentral()
 
@@ -27,6 +32,20 @@ dependencies {
     compileOnly 'me.clip:placeholderapi:2.0.8'
 }
 
+// Task to replace version number in plugin.yml
+task finalize << {
+    File pluginYaml = new File( 'src/resources/plugin.yml' )
+    String contents = pluginYaml.getText( 'UTF-8' )
+
+    contents = contents.replaceAll( Pattern.quote("{gradle-version}"), "${project.version}" )
+    new File( 'build/resources/main/plugin.yml' ).write( contents, 'UTF-8' )
+
+    println "Patched version code in plugin.yml"
+}
+
+// Perform the plugin.yml replace code whilst processing resources
+processResources.finalizedBy(finalize)
+
 /* `gradle build` from the command line */
 sourceSets {
     main {
@@ -40,7 +59,7 @@ sourceSets {
     }
 }
 
-
+// Custom archive name
 jar {
     archiveName "SquidHQ-${version}.jar"
 }
