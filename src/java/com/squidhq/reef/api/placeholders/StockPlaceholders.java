@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import java.util.regex.Pattern;
 
-public class ReefPlaceholders {
+public class StockPlaceholders {
 
     public static String replace(String text, Player player){
         return replace(text, player, true);

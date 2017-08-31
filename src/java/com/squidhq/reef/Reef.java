@@ -3,6 +3,7 @@ package com.squidhq.reef;
 import com.squidhq.plugin.APISingleton;
 import com.squidhq.reef.api.LegacyAPI;
 import com.squidhq.reef.api.ReefAPI;
+import com.squidhq.reef.api.placeholders.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -57,6 +58,12 @@ public class Reef extends JavaPlugin {
         getServer().getPluginCommand("sqcheck").setExecutor(new CheckCommand(this));
         getServer().getPluginCommand("sqstats").setExecutor(new StatisticCommand(this));
         getServer().getPluginCommand("sqreload").setExecutor(new ReloadCommand(this));
+
+        // Integrate with PlaceholderAPI
+        if(Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
+            getLogger().log(Level.INFO, "Attempting PlaceholderAPI integration...");
+            new PlaceholderAPI(this).hook();
+        }
 
         getLogger().log(Level.INFO, "Registering messaging channel.");
         // Plugin messaging (for identifying SquidHQ clients)

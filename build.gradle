@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = "com.clout-team.sam"
-version = "1.0.2-Reef"
+version = "1.0.3-Reef"
 
 repositories {
     mavenCentral()
@@ -15,11 +15,16 @@ repositories {
     maven {
         url "https://hub.spigotmc.org/nexus/content/repositories/public/"
     }
+
+    maven {
+        url "http://repo.extendedclip.com/content/repositories/placeholderapi/"
+    }
 }
 
 dependencies {
     compileOnly 'org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT'
     compileOnly 'org.bukkit:bukkit:1.8.8-R0.1-SNAPSHOT'
+    compileOnly 'me.clip:placeholderapi:2.0.8'
 }
 
 /* `gradle build` from the command line */

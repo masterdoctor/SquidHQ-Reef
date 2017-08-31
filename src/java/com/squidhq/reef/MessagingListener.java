@@ -1,6 +1,6 @@
 package com.squidhq.reef;
 
-import com.squidhq.reef.api.placeholders.ReefPlaceholders;
+import com.squidhq.reef.api.placeholders.StockPlaceholders;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
@@ -58,14 +58,14 @@ class MessagingListener implements PluginMessageListener {
         // If there are any messages loaded, display them.
         if(messages != null){
             for(String message : messages){
-                player.sendMessage(ReefPlaceholders.replace(message, player));
+                player.sendMessage(StockPlaceholders.replace(message, player));
             }
         }
 
         // If there are any commands loaded, execute them.
         if(commands != null){
             for(String command : commands){
-                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), ReefPlaceholders.replace(command, player, false));
+                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), StockPlaceholders.replace(command, player, false));
             }
         }
     }
