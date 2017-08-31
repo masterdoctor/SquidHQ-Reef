@@ -1,4 +1,4 @@
-package com.squidhq.reef.api.placeholders;
+package com.squidhq.reef.api.placeholders.integration;
 
 import com.squidhq.reef.Reef;
 import me.clip.placeholderapi.external.EZPlaceholderHook;

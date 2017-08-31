@@ -1,6 +1,6 @@
 package com.squidhq.reef;
 
-import com.squidhq.reef.api.placeholders.StockPlaceholders;
+import com.squidhq.reef.api.placeholders.util.StockPlaceholders;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;

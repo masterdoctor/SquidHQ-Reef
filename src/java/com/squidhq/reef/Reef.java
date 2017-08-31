@@ -3,7 +3,7 @@ package com.squidhq.reef;
 import com.squidhq.plugin.APISingleton;
 import com.squidhq.reef.api.LegacyAPI;
 import com.squidhq.reef.api.ReefAPI;
-import com.squidhq.reef.api.placeholders.PlaceholderAPI;
+import com.squidhq.reef.api.placeholders.integration.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
