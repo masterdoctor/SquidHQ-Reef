@@ -1,6 +1,7 @@
-name: SquidHQ
+name: {gradle-name}
 main: com.squidhq.reef.Reef
 version: {gradle-version}
+author: {gradle-author}
 softdepend: [PlaceholderAPI]
 commands:
   sqcheck:

@@ -7,7 +7,7 @@ apply plugin: 'maven-publish'
 
 // Group and version information
 group = "com.clout-team.sam"
-version = "1.0.4-Reef"
+version = gradle.squidVersion
 
 // Repositories & dependencies
 repositories {
@@ -33,14 +33,18 @@ dependencies {
 }
 
 // Task to replace version number in plugin.yml
+//noinspection GroovyAssignabilityCheck
 task finalize << {
     File pluginYaml = new File( 'src/resources/plugin.yml' )
     String contents = pluginYaml.getText( 'UTF-8' )
 
+    contents = contents.replaceAll( Pattern.quote("{gradle-name}"), "${gradle.pluginName}" )
     contents = contents.replaceAll( Pattern.quote("{gradle-version}"), "${project.version}" )
+    contents = contents.replaceAll( Pattern.quote("{gradle-author}"), "${gradle.squidAuthor}" )
+
     new File( 'build/resources/main/plugin.yml' ).write( contents, 'UTF-8' )
 
-    println "Patched version code in plugin.yml"
+    println "Patched plugin.yml"
 }
 
 // Perform the plugin.yml replace code whilst processing resources

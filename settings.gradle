@@ -1,1 +1,7 @@
+// Project details
 rootProject.name = "SquidHQ"
+
+// Plugin details
+gradle.ext.pluginName = "SquidHQ"                             // plugin.yml plugin name
+gradle.ext.squidVersion = "1.0.4-Reef"                        // plugin.yml plugin version (and generated JAR version)
+gradle.ext.squidAuthor = "Sam J.H. Mearns & the Squid Team"   // plugin.yml plugin author
