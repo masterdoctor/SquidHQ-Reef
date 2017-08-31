@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 group = "com.clout-team.sam"
-version = "1.0.1-Reef"
+version = "1.0.2-Reef"
 
 repositories {
     mavenCentral()

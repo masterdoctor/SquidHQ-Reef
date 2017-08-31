@@ -3,9 +3,16 @@ package com.squidhq.reef;
 import com.squidhq.plugin.APISingleton;
 import com.squidhq.reef.api.LegacyAPI;
 import com.squidhq.reef.api.ReefAPI;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.util.logging.Level;
 
@@ -23,6 +30,26 @@ public class Reef extends JavaPlugin {
         // Instantiate the arrays used to store the players
         identifiedPlayers = new ArrayList<>();
         squidPlayers = new ArrayList<>();
+
+        // Check if players have already been initialised
+        FileConfiguration dat = new YamlConfiguration();
+        try {
+            dat.load(new File(getDataFolder() + File.separator + "dat.yml"));
+            for(String uuid : dat.getKeys(false)){
+                OfflinePlayer player = Bukkit.getOfflinePlayer(UUID.fromString(uuid));
+                if(player != null && player.isOnline()){
+                    // load player
+                    identifiedPlayers.add(uuid);
+                    if(dat.getBoolean(uuid)){
+                        squidPlayers.add(uuid);
+                    }
+                }
+            }
+
+            new File(getDataFolder() + File.separator + "dat.yml").delete();
+        }catch(Exception ex){
+            getLogger().log(Level.INFO, "Unable to restore previous player set.");
+        }
 
         // Register all the listeners and commands
         getLogger().log(Level.INFO, "Registering commands and listeners.");
@@ -45,6 +72,17 @@ public class Reef extends JavaPlugin {
 
     @Override
     public void onDisable(){
+        FileConfiguration dat = new YamlConfiguration();
+        for(Player player : getServer().getOnlinePlayers()){
+            dat.set(player.getUniqueId().toString(), squidPlayers.contains(player.getUniqueId().toString()));
+        }
+
+        try {
+            dat.save(new File(getDataFolder() + File.separator + "dat.yml"));
+        }catch(IOException ex){
+            getLogger().log(Level.SEVERE, "Unable to save data. Please delete " + getDataFolder().getName() + "/dat.yml");
+        }
+
         getLogger().log(Level.INFO, "Plugin deactivated.");
         getLogger().log(Level.INFO, "Thanks for supporting SquidHQ!");
     }
